@@ -1,0 +1,27 @@
+---
+const heroButtons = [
+    {
+        text: 'Github',
+        path: '',
+        image: '',
+    },
+    {
+        text: 'Contact',
+        path: '',
+        image: '',
+    },
+]
+---
+
+<section class="hero">
+    <p>Hello, je suis</p>
+    <h2 class="text-2xl">Théo</h2>
+    <p>Developpeur web depuis 2023 !</p>
+    <div class="flex gap-4">
+        {heroButtons.map(btn => (
+            <button >
+                <a href={btn.path}>{btn.text}</a>
+            </button>
+        ))}
+    </div>
+</section>
