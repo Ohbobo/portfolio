@@ -1,27 +1,38 @@
 ---
+import Icon from 'astro-icon';
+import Button from './ui_components/button.astro';
+
 const heroButtons = [
     {
         text: 'Github',
-        path: '',
-        image: '',
+        path: 'https://github.com/Ohbobo',
+        icon: 'ri:github-line',
+        style: 'primary',
     },
     {
         text: 'Contact',
-        path: '',
-        image: '',
+        path: '#contact',
+        icon: 'ri:mail-fill',
+        style: 'transparent'
     },
 ]
 ---
 
-<section class="hero">
-    <p>Hello, je suis</p>
-    <h2 class="text-2xl">Théo</h2>
-    <p>Developpeur web depuis 2023 !</p>
+<section class="flex flex-col gap-6">
+    <div class="flex flex-col gap-2">
+        <p class="text-2xl">Hello, je suis</p>
+        <h2 class="text-5xl">Théo</h2>
+        <p class="text-3xl">Developpeur web depuis 2023 !</p>
+    </div>
     <div class="flex gap-4">
         {heroButtons.map(btn => (
-            <button >
-                <a href={btn.path}>{btn.text}</a>
-            </button>
+            <Button 
+                size={'lg'} 
+                style={btn.style} 
+                icon={btn.icon} 
+                path={btn.path} 
+                text={btn.text}>
+            </Button>
         ))}
     </div>
 </section>
